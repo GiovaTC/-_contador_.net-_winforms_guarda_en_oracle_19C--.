@@ -31,6 +31,51 @@ namespace ContadorApp
             UpdateLabel();
         }
 
+        private void ChkAutoSave_CheckedChanged(object sender, EventArgs e)
+        {
+            // nothing special needed
+        }
+
+        private async void BtnStart_Click(object sender, EventArgs e)
+        {
+           if (_cts != null) return; // ya en ejecucion
+
+           _cts = new CancellationTokenSource();
+            lblStatus.Text = "En ejecucion";
+            try
+            {
+                await RunCounterAsync(_cts.Token);
+                lblStatus.Text = "Completado";
+            }
+            catch (OperationCanceledException)
+            {
+                lblStatus.Text = "Detenido";
+            }
+            finally
+            {
+                _cts.Dispose();
+                _cts = null;
+            }
+        }   
+
+        private void BtnStop_Click(object sender, EventArgs e)
+        {
+            _cts?.Cancel();
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            if (_cts != null) return; // no permitir reset mientras se ejecuta
+            _current = 0;
+            UpdateLabel();
+            lblStatus.Text = "Reiniciado";
+        }
+
+        private async void BtnSaveOnce_Click(object sender, EventArgs e)
+        {
+            await SaveNumberToOracleAsync(_current); 
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
