@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ContadorApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28d7451f98545acbc68552995d02764b5b664365")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cacafcdb5e4b9b39c251a98fec9a20d273900dbb")]
 [assembly: System.Reflection.AssemblyProductAttribute("ContadorApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ContadorApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
