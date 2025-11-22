@@ -20,6 +20,7 @@ namespace ContadorApp
         public Form1()
         {
             InitializeComponent();
+            // inicializar controles    
         }
 
         private void Form1_Load(object sender, EventArgs e)
