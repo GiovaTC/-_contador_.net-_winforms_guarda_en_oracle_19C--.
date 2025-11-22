@@ -21,6 +21,14 @@ namespace ContadorApp
         {
             InitializeComponent();
             // inicializar controles    
+            btnStart.Click += BtnStart_Click;
+            btnStop.Click += BtnStop_Click;
+            btnReset.Click += BtnReset_Click;
+            btnSaveOnce.Click += BtnSaveOnce_Click;
+            chkAutoSave.CheckedChanged += ChkAutoSave_CheckedChanged;
+
+            lblStatus.Text = "Listo";
+            UpdateLabel();
         }
 
         private void Form1_Load(object sender, EventArgs e)
